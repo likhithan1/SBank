@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_accsum"
+            android:icon="@drawable/accsum1"
+            android:title="Account Summary" />
+        <item
+            android:id="@+id/nav_transfer"
+            android:icon="@drawable/transfer1"
+            android:title="Transfer" />
+        <item
+            android:id="@+id/nav_ministmt"
+            android:icon="@drawable/ministmt"
+            android:title="Mini Statement" />
+        <item
+            android:id="@+id/nav_accset"
+            android:icon="@drawable/settings"
+            android:title="Account Settings" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/feedback"
+                android:title="Feed Back" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/about"
+                android:title="About us" />
+        </menu>
+    </item>
+
+</menu>

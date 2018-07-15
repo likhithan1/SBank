@@ -32,8 +32,13 @@ public class welcome extends AppCompatActivity
         setContentView(R.layout.activity_welcome);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//        mainname1=(TextView)findViewById(R.id.mainname);
-        //mainaccno1=(TextView)findViewById(R.id.mainaccno);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        View nv = navigationView.getHeaderView(0);
+
+        mainname1=(TextView)nv.findViewById(R.id.mainname);
+
+        mainaccno1=(TextView)nv.findViewById(R.id.mainaccno);
 
         String msg=getIntent().getExtras().getString("ourresult");
         int i=0;
@@ -46,7 +51,8 @@ public class welcome extends AppCompatActivity
         String accnum=msg.substring(0,i);
         String name=msg.substring(i+1,msg.length());
 
-//        mainname1.setText(name);
+        mainname1.setText(name);
+        mainaccno1.setText(accnum);
 
         //Toast.makeText(this, name, Toast.LENGTH_LONG).show();
 
@@ -65,8 +71,7 @@ public class welcome extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override

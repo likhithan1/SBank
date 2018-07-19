@@ -100,25 +100,27 @@ public class welcome extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_accsum) {
+            String method="accsum";
+            BackgroundTask backgroundTask=new BackgroundTask((Context)this);
+            backgroundTask.execute(method,accnum);
             // Handle the camera action
-            Intent accset=new Intent(welcome.this,account_settings.class);
-            welcome.this.startActivity(accset);
         } else if (id == R.id.nav_transfer) {
-            Intent accset=new Intent(welcome.this,account_settings.class);
-            welcome.this.startActivity(accset);
+
         } else if (id == R.id.nav_ministmt) {
-            Intent accset=new Intent(welcome.this,account_settings.class);
-            welcome.this.startActivity(accset);
+
         } else if (id == R.id.nav_accset) {
+
             Intent accset=new Intent(welcome.this,account_settings.class);
+            Bundle bundle=new Bundle();
+            bundle.putString("ouraccnum",accnum);
+            accset.putExtras(bundle);
             welcome.this.startActivity(accset);
 
-        } else if (id == R.id.nav_feedback) {
-            Intent accset=new Intent(welcome.this,account_settings.class);
-            welcome.this.startActivity(accset);
+        }
+        else if (id == R.id.nav_feedback) {
+
         } else if (id == R.id.nav_send) {
-            Intent accset=new Intent(welcome.this,account_settings.class);
-            welcome.this.startActivity(accset);
+
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -119,38 +119,16 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
             }
         }
         else if(method.equals("updatepass")){
-            String update_pass = params[1];
-            String update_repass=params[2];
-                try {
-                    URL url = new URL(login_url);
-                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                    httpURLConnection.setRequestMethod("POST");
-                    httpURLConnection.setDoOutput(true);
-                    httpURLConnection.setDoInput(true);
-                    OutputStream outputStream = httpURLConnection.getOutputStream();
-                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                    String data = URLEncoder.encode("up_email", "UTF-8") + "=" + URLEncoder.encode(update_pass, "UTF-8") + "&" +
-                            URLEncoder.encode("update_pass", "UTF-8") + "=" + URLEncoder.encode(update_pass, "UTF-8");
-                    bufferedWriter.write(data);
-                    bufferedWriter.flush();
-                    bufferedWriter.close();
-                    outputStream.close();
-                    InputStream inputStream = httpURLConnection.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
-                    String response = "";
-                    String line = "";
-                    while ((line = bufferedReader.readLine()) != null) {
-                        response += line;
-                    }
-                    bufferedReader.close();
-                    inputStream.close();
-                    httpURLConnection.disconnect();
-                    return response;
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            String pas=params[1];
+            String ac=params[2];
+            Toast.makeText(ctx,ac, Toast.LENGTH_LONG).show();
+            return "Password Updated..!";
+
+        }
+        else if(method.equals("accsum")){
+            String ac=params[1];
+            Toast.makeText(ctx,ac, Toast.LENGTH_LONG).show();
+
         }
 
         return null;

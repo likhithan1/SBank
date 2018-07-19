@@ -128,6 +128,7 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
         else if(method.equals("accsum")){
             String ac=params[1];
             Toast.makeText(ctx,ac, Toast.LENGTH_LONG).show();
+            return "Till now..!";
 
         }
 
